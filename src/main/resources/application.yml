@@ -1,0 +1,70 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: tianhuan-test
+  main:
+    banner-mode: log
+  datasource:
+    druid:
+      url: jdbc:mysql://39.105.0.233:3306/tianhuan?autoCommit=true&autoReconnect=true&useUnicode=true&tinyInt1isBit=false&zeroDateTimeBehavior=convertToNull&characterEncoding=UTF-8&yearIsDateType=false&allowMultiQueries=true
+      username: test
+      password: Th110120!
+      driver-class-name: com.mysql.jdbc.Driver
+      filter:
+        stat:
+          slow-sql-millis: 5000
+          merge-sql: true
+        slf4j:
+          statement-executable-sql-log-enable: true
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+  redis:
+    database: 0
+    host: 39.105.0.233
+    port: 6379
+    password: tianhuan
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1ms
+        max-idle: 8
+        min-idle: 0
+    timeout: 2000
+  rabbitmq:
+    host: 39.105.0.233
+    port: 5672
+    username: admin
+    password: admin@123
+    virtual-host: /
+  mvc:
+    static-path-pattern: /static/**,/templates/**
+  resources:
+    static-locations: classpath:/static/,classpath:/templates/
+
+
+my:
+  test:
+    name: tianhuan
+    age: 12
+    man: true
+  book:
+    name: cloud
+    pagesize: 100
+  author:
+    name: tianhuan
+    date: 2018-12-12
+logging:
+  level:
+    mapper: debug
+
+kr:
+  rabbitmq:
+    autoconfigure:
+      enable: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://39.105.0.233:8761/eureka/
+
+
