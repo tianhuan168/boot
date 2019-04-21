@@ -9,7 +9,7 @@ spring:
     druid:
       url: jdbc:mysql://39.105.0.233:3306/tianhuan?autoCommit=true&autoReconnect=true&useUnicode=true&tinyInt1isBit=false&zeroDateTimeBehavior=convertToNull&characterEncoding=UTF-8&yearIsDateType=false&allowMultiQueries=true
       username: test
-      password: Th110120!
+      password: ******
       driver-class-name: com.mysql.jdbc.Driver
       filter:
         stat:
@@ -23,7 +23,7 @@ spring:
     database: 0
     host: 39.105.0.233
     port: 6379
-    password: tianhuan
+    password: ******
     jedis:
       pool:
         max-active: 8
@@ -34,8 +34,8 @@ spring:
   rabbitmq:
     host: 39.105.0.233
     port: 5672
-    username: admin
-    password: admin@123
+    username: ******
+    password: ******
     virtual-host: /
   mvc:
     static-path-pattern: /static/**,/templates/**
